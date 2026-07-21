@@ -6,10 +6,21 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
 
-int solve() {
-    int n;
-    cin >> n;
+string solve() {
+    ll n, k;
+    cin >> n>>k;
 
+    vll a(n);
+    for(int i=0; i<n; i++){
+        cin >> a[i];
+    }
+    vll copy_a = a;
+
+    sort(copy_a.begin(), copy_a.end());
+
+    if (copy_a==a || k>1) return "YES";
+    else return "NO";
+    
     // code
 }
 

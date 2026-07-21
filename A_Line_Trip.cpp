@@ -19,12 +19,24 @@ constexpr int MOD2 = 998244353;
 #define rall(x) (x).rbegin(), (x).rend()
 
 int solve() {
-    int n;
-    cin >> n;
+    int n, x;
+    cin >> n>>x;
+    vll a(n);
+    
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+    }
+    a.push_back(0);
+    a.push_back(x);
+    sort(all(a));
+    int m = a.size();
+    ll req = -INF;
+    for (int i = 1; i < m; i++) {
+        if(i==m-1) req = max(req, 2LL*( a[i] - a[i-1]));
+        else req = max(req, (a[i] - a[i-1]));
+    }
 
-    // code
-
-    return 0;
+    return req;
 }
 
 int main() {
