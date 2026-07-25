@@ -18,13 +18,22 @@ constexpr int MOD2 = 998244353;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-int solve() {
-    int n;
-    cin >> n;
+string solve() {
+    int n, k;
+    cin >> n>>k;
+    
+    vll a(n);
+    for(int i=0; i<n; i++) cin>>a[i];
 
+    int count=0;
+    for(int i=0; i<n; i++){
+        if(a[i]==k) count++;
+    }
+
+    if(count==0) return "NO";
     // code
 
-    return 0;
+    return "YES";
 }
 
 int main() {
