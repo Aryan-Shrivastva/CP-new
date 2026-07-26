@@ -13,28 +13,20 @@ using vpll = vector<pll>;
 constexpr int INF = 1e9;
 constexpr ll LINF = 1e18;
 constexpr int MOD = 1e9 + 7;
-
 constexpr int MOD2 = 998244353;
 
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-string solve() {
-    int n, k;
-    cin >> n>>k;
-    
+int solve() {
+    int n;
+    cin >> n;
     vll a(n);
-    for(int i=0; i<n; i++) cin>>a[i];
+    for(int i=1; i<n; i++) cin>>a[i];
 
-    int count=0;
-    for(int i=0; i<n; i++){
-        if(a[i]==k) count++;
-    }
-
-    if(count==0) return "NO";
-    // code
-
-    return "YES";
+    ll sum = 0;
+    for(int i=0; i<n; i++) sum += a[i];
+    return -sum;
 }
 
 int main() {

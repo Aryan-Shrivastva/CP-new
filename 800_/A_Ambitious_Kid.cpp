@@ -13,38 +13,29 @@ using vpll = vector<pll>;
 constexpr int INF = 1e9;
 constexpr ll LINF = 1e18;
 constexpr int MOD = 1e9 + 7;
-
 constexpr int MOD2 = 998244353;
 
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-string solve() {
-    int n, k;
-    cin >> n>>k;
-    
+ll solve() {
+    int n;
+    cin >> n;
     vll a(n);
-    for(int i=0; i<n; i++) cin>>a[i];
-
-    int count=0;
-    for(int i=0; i<n; i++){
-        if(a[i]==k) count++;
+    
+    for(int i=0; i<n; i++) {
+        cin>>a[i];
     }
-
-    if(count==0) return "NO";
-    // code
-
-    return "YES";
+    ll mn = INT_MAX;
+    for(int i=0; i<n; i++){
+        mn=min(mn, abs(a[i]));
+    }
+    return mn;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    cout << solve() << '\n';
 }
