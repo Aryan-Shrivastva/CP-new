@@ -24,8 +24,23 @@ int solve() {
     vll a(n);
     for(int i=0; i<n; i++) cin>>a[i];
     // code
+    ll one = 0;
+    ll inverse =0; //-1
 
-    return 0;
+    for(int i=0; i<n; i++){
+        if(a[i]==1)one++;
+        else inverse++;
+    }
+
+    ll count=0;
+
+    while(one<inverse || inverse%2==1){
+        count+=1;
+        one+=1;
+        inverse-=1;
+    }
+
+    return count;
 }
 
 int main() {
