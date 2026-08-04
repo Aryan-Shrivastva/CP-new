@@ -19,13 +19,23 @@ constexpr int MOD2 = 998244353;
 #define rall(x) (x).rbegin(), (x).rend()
 
 ll solve() {
-    ll n;
-    cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
+    ll a,b,n;
+    cin >> a>>b>>n;
+    vll x(n);
+    for(ll i=0; i<n; i++) cin>>x[i];
+    
+    //bomb set to b initially, every second b-1
+    //chose min(c+x[i], a)
+    
+    //c = maxTime-> initial b
+    ll c = b;
 
-    return 0;
+    for(ll i=0; i<n; i++){
+        //calculating the max time by adding the minimum of each tool's increment and the maximum time allowed (a-1)
+        c += min(x[i], a-1);
+        if(c==0) break;
+    }
+    return c;
 }
 
 int main() {
