@@ -18,14 +18,26 @@ constexpr int MOD2 = 998244353;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-ll solve() {
+void solve() {
     ll n;
     cin >> n;
     vll a(n);
-    for(int i=0; i<n; i++) cin>>a[i];
+    for(ll i=0; i<n; i++) cin>>a[i];
     // code
 
-    return 0;
+    if(n%2==0){
+        cout<<2<<endl; //output the no of operations
+        cout<<1<<" "<<n<<endl; //perform operation on entire array
+        cout<<1<<" "<<n<<endl; // repear
+    }else{
+        //n is odd
+        cout<<4<<endl;
+        cout<<1<<" "<<n-1<<endl;
+        cout<<1<<" "<<n-1<<endl;
+        cout<<n-1<<" "<<n<<endl;
+        cout<<n-1<<" "<<n<<endl;
+    }
+
 }
 
 int main() {
@@ -36,6 +48,6 @@ int main() {
     cin >> t;
 
     while (t--) {
-        cout << solve() << '\n';
+        solve();
     }
 }
