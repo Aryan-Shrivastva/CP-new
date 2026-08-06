@@ -23,19 +23,20 @@ ll solve() {
     cin >> n;
     string s;
     cin>>s;
-    int cnt=1;
-    for(int i=1; i<n; i++) if(s[i]!=s[i-1]) cnt++;
 
-    int ans = cnt;
+    int dis=1, x=0; //distinct
+    for(int i=1; i<n; i++){
+        if(s[i]!=s[i-1]) dis++;
+        if(i==n-1) break;
 
-    for(int i=1; i<=n-2; i++){
-        int prev = (s[i-1]!=s[i])+ (s[i]!=s[i+1]);
-        int next = (s[i-1]!=s[i+1]);
-        ans = min(ans, cnt-prev+next);
+        if(s[i]!=s[i-1] && s[i]!=s[i+1]){
+            if(s[i+1]==s[i-1]) x=2;
+            else x = max(x, 1);
+        }
     }
-    // code
+    return dis-x;
+    
 
-    return ans;
 }
 
 int main() {
