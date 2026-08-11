@@ -20,23 +20,26 @@ constexpr ll NEG = -(ll)4e18;
 #define rall(x) (x).rbegin(), (x).rend()
 
 ll solve() {
-    ll n, k;
-    cin >> n>>k;
-    vll a(n);
-    for(int i=0; i<n; i++) cin>>a[i];
-
-    sort(all(a));
-    ll count=1;
-    ll maxLen =1;
-
-    for(ll i=1; i<n; i++){
-        if(abs(a[i]-a[i-1])<=k) count+=1;
-        else count=1;
-
-        maxLen = max(maxLen, count);
+    ll n;
+    cin >> n;
+    string s;
+    cin>>s;
+    ll c1=0, c2=0;
+    ll mx=0;
+    for(char c:s){
+        if(c=='<'){
+            c1+=1;
+            c2=0;
+            mx = max(mx, c1);
+        }
+        else{
+            c2+=1;
+            c1=0;
+            mx = max(mx, c2);
+        } 
     }
 
-    return n-maxLen;
+    return mx+1;
 }
 
 int main() {
