@@ -19,14 +19,27 @@ constexpr ll NEG = -(ll)4e18;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-ll solve() {
+vll solve() {
     ll n;
     cin >> n;
     vll a(n);
     for(int i=0; i<n; i++) cin>>a[i];
-    // code
+    // choose any no and add 1, make atmost 2n operations
+    // ai+1 !divisible by ai
+    //next number should no be divisible by prev number
+    for(int i=0; i<n; i++){
+        if(a[i]==1){
+            a[i]+= 1;
+        }
+    }
 
-    return 0;
+    for(int i=0; i<n-1; i++){
+        if(a[i+1]%a[i]==0){
+            a[i+1]+= 1;
+        }
+    }
+
+    return a;
 }
 
 int main() {
@@ -36,7 +49,16 @@ int main() {
     int t;
     cin >> t;
 
-    while (t--) {
-        cout << solve() << '\n';
+    while(t--) {
+
+        vll ans = solve();
+
+        for(ll x : ans) {
+            cout << x << " ";
+        }
+
+        cout << '\n';
     }
+
+    return 0;
 }
