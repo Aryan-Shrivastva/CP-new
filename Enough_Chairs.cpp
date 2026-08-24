@@ -19,24 +19,17 @@ constexpr ll NEG = -(ll)4e18;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-ll solve() {
-    ll n;
-    cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
-
-    return 0;
+void solve() {
+    ll n, k, p;
+    cin >> n>>k>>p;
+    if(n*k>=p) cout<<"Yes\n";
+    else cout<<"NO\n";
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    solve();
+    
 }

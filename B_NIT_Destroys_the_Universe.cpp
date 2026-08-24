@@ -24,9 +24,27 @@ ll solve() {
     cin >> n;
     vll a(n);
     for(ll i=0; i<n; i++) cin>>a[i];
-    // code
+    // like we can remove consecutive nonzero sub array, if there are 0 in between, we need to remove those with oper=1 with no of consecutive zero subarrray
+    ll zero=0;
+    for(ll i=0; i<n; i++){
+        if(a[i]==0) zero+=1;
+    }
 
-    return 0;
+    bool found_zero = 0;
+    ll left =0;
+    ll right=n-1;
+
+    while(a[left]==0) left+=1;
+
+    while(a[right]==0) right-=1;
+
+    for(ll i=left; i<=right; i++){
+        if(a[i]==0) found_zero=true;
+    }
+
+    if(zero==n) return 0;
+    else if(found_zero==false) return 1;
+    else return 2;
 }
 
 int main() {

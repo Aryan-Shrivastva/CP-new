@@ -22,11 +22,25 @@ constexpr ll NEG = -(ll)4e18;
 ll solve() {
     ll n;
     cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
 
-    return 0;
+    ll sum = 0;
+    ll odd = 0;
+
+    for (int i = 0; i < n; i++) {
+        ll x;
+        cin >> x;
+
+        sum += x;
+
+        if (x % 2 == 1)
+            odd++;
+    }
+
+    if (sum % 2 == 0) {
+        return sum - odd / 2;
+    }
+
+    return (odd - 1) / 2;
 }
 
 int main() {

@@ -22,11 +22,22 @@ constexpr ll NEG = -(ll)4e18;
 ll solve() {
     ll n;
     cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
 
-    return 0;
+    if (n % 3 == 0) {
+        return 0;
+    }
+
+    if ((n + 1) % 3 == 0) {
+        return 1;
+    }
+
+    ll next5 = ((n / 5) + 1) * 5;
+
+    if (next5 % 3 == 0) {
+        return 1;
+    }
+
+    return 2;
 }
 
 int main() {

@@ -25,18 +25,20 @@ ll solve() {
     vll a(n);
     for(ll i=0; i<n; i++) cin>>a[i];
     // code
+    bool valid = false;
+    ll l =0;
+    ll mxlen=1;
+    for(ll r=1; r<n; r++){
+        while (a[r]-a[r-1]==1 or 2*a[r]==a[r-1])r+=1;
+        mxlen =max(mxlen, r-l+1);
+        l+=1; 
+    }
 
-    return 0;
+    return mxlen;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    cout << solve() << '\n';
 }

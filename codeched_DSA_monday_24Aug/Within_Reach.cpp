@@ -19,24 +19,20 @@ constexpr ll NEG = -(ll)4e18;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 
-ll solve() {
-    ll n;
-    cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
+string solve() {
+    ll x, y, k;
+    cin >> x>>y>>k;
     // code
 
-    return 0;
+    if (abs(x-y)<=k) return "YES";
+
+    return "NO";
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    cout << solve() << '\n';
+    
 }

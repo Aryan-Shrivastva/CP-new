@@ -25,8 +25,21 @@ ll solve() {
     vll a(n);
     for(ll i=0; i<n; i++) cin>>a[i];
     // code
+    ll pos =0;
+    ll neg =0;
 
-    return 0;
+    for(ll i=0; i<n; i++){
+        if(a[i]==1) pos+=1;
+        else neg+=1;
+    }
+
+    if(pos==neg) return 0;
+    ll diff = abs(pos-neg);
+
+    if(diff%2!=0) return -1;
+    
+    return diff/2;
+
 }
 
 int main() {

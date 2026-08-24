@@ -22,21 +22,24 @@ constexpr ll NEG = -(ll)4e18;
 ll solve() {
     ll n;
     cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
+    string s;
+    cin>>s;
+    ll count=0;
 
-    return 0;
+    for (ll i=0; i<n; i++){
+        if(s[i]=='1'){
+            count+=1;
+            while(i+1<n && s[i+1]=='1') i++;
+        }
+
+    }
+    return count;
+
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    cout<< solve()<<'\n';
 }

@@ -20,13 +20,15 @@ constexpr ll NEG = -(ll)4e18;
 #define rall(x) (x).rbegin(), (x).rend()
 
 ll solve() {
-    ll n;
-    cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
-    // code
+    ll n, m, x;
+    cin >> n >> m >> x;
 
-    return 0;
+    ll row = (x - 1) / m + 1;
+
+    ll front = row;
+    ll back = n - row + 1;
+
+    return min(front, back);
 }
 
 int main() {

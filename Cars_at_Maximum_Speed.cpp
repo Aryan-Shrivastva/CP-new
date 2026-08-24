@@ -24,19 +24,21 @@ ll solve() {
     cin >> n;
     vll a(n);
     for(ll i=0; i<n; i++) cin>>a[i];
-    // code
-
-    return 0;
+    ll mnspeed = a[0];
+    ll count=0;
+    for(ll i=1; i<n; i++){
+        if(a[i]<mnspeed){
+            count+=1;
+            mnspeed = a[i];
+        } 
+    }
+    return count+1;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-
-    while (t--) {
-        cout << solve() << '\n';
-    }
+    cout << solve() << '\n';
+    
 }
