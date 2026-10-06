@@ -22,8 +22,8 @@ constexpr ll NEG = -(ll)4e18;
 ll solve() {
     ll n;
     cin >> n;
-    vll a(n);
-    for(ll i=0; i<n; i++) cin>>a[i];
+    string s, t;
+    cin >> s >> t;
     // code
 
     return 0;
